@@ -1,0 +1,47 @@
+# ==========================================
+
+# SIGNBRIDGE AI - PHASE 1 REQUIREMENTS
+
+# ==========================================
+
+# FastAPI
+
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+
+# Database
+
+sqlalchemy==2.0.43
+psycopg2-binary==2.9.10
+
+# Database Migrations
+
+alembic==1.16.4
+
+# Authentication
+
+python-jose[cryptography]==3.5.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.3.0
+
+# Environment Variables
+
+python-dotenv==1.1.1
+
+# Request Validation
+
+pydantic==2.11.7
+pydantic-settings==2.10.1
+
+# Multipart Forms (Login/Register)
+
+python-multipart==0.0.20
+
+# HTTP Client
+
+httpx==0.28.1
+
+# Email Validation
+
+email-validator==2.2.0
+

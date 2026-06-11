@@ -1,0 +1,207 @@
+# ==========================================
+
+# SIGNBRIDGE AI - .gitignore
+
+# ==========================================
+
+# ----------------------------
+
+# ENVIRONMENT VARIABLES
+
+# ----------------------------
+
+.env
+.env.local
+.env.development
+.env.production
+
+# ----------------------------
+
+# PYTHON
+
+# ----------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+#Dataset
+
+dataset/ 
+
+# Virtual Environments
+
+venv/
+.venv/
+env/
+ENV/
+
+# Python Build Files
+
+build/
+dist/
+*.egg-info/
+
+# Testing
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type Checking
+
+.mypy_cache/
+.pytype/
+
+# ----------------------------
+
+# FASTAPI / UVICORN
+
+# ----------------------------
+
+*.log
+
+# ----------------------------
+
+# DATABASE
+
+# ----------------------------
+
+*.sqlite
+*.db
+
+# Alembic
+
+alembic/versions/*.pyc
+
+# ----------------------------
+
+# AI / ML MODELS
+
+# ----------------------------
+*.pkl
+checkpoints/
+weights/
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.h5
+*.pb
+
+# HuggingFace Cache
+
+.cache/
+huggingface/
+
+# ----------------------------
+
+# FILE UPLOADS
+
+# ----------------------------
+
+uploads/
+temp/
+tmp/
+
+# ----------------------------
+
+# NODE / NEXT.JS
+
+# ----------------------------
+
+node_modules/
+
+.next/
+
+out/
+
+# Package Managers
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------
+
+# TYPESCRIPT
+
+# ----------------------------
+
+*.tsbuildinfo
+
+# ----------------------------
+
+# VS CODE
+
+# ----------------------------
+
+.vscode/
+
+# ----------------------------
+
+# JETBRAINS
+
+# ----------------------------
+
+.idea/
+
+# ----------------------------
+
+# OPERATING SYSTEM FILES
+
+# ----------------------------
+
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+
+# LOG FILES
+
+# ----------------------------
+
+logs/
+*.log
+
+# ----------------------------
+
+# SECRETS
+
+# ----------------------------
+
+secrets/
+credentials.json
+service-account.json
+
+# ----------------------------
+
+# COVERAGE
+
+# ----------------------------
+
+coverage/
+
+# ----------------------------
+
+# DOCKER
+
+# ----------------------------
+
+docker-compose.override.yml
+
+# ----------------------------
+
+# MISC
+
+# ----------------------------
+
+*.bak
+*.swp
+*.tmp
+
+
+# ----------------------------
+
+

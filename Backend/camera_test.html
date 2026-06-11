@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignBridge Camera Test</title>
+</head>
+<body>
+
+<h2>Camera Feed</h2>
+
+<video
+    id="video"
+    width="640"
+    height="480"
+    autoplay
+></video>
+
+<canvas
+    id="canvas"
+    width="640"
+    height="480"
+    style="display:none;"
+></canvas>
+
+<h3>Detection Result</h3>
+
+<pre id="output"></pre>
+
+<script>
+
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const output = document.getElementById("output");
+
+const ctx = canvas.getContext("2d");
+
+const socket = new WebSocket(
+    "ws://127.0.0.1:8000/ws/sign"
+);
+
+navigator.mediaDevices
+.getUserMedia({
+    video: true
+})
+.then(stream => {
+
+    video.srcObject = stream;
+
+})
+.catch(error => {
+
+    console.error(error);
+
+});
+
+socket.onopen = () => {
+
+    console.log(
+        "WEBSOCKET CONNECTED"
+    );
+
+    setInterval(() => {
+
+        if (
+            video.readyState !== 4
+        ) {
+            return;
+        }
+
+        ctx.drawImage(
+            video,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        const frame =
+            canvas.toDataURL(
+                "image/jpeg",
+                0.7
+            );
+
+        socket.send(frame);
+
+    }, 500);
+
+};
+
+socket.onmessage = (event) => {
+
+    const data =
+        JSON.parse(
+            event.data
+        );
+
+    output.innerText =
+        JSON.stringify(
+            data,
+            null,
+            2
+        );
+
+};
+
+socket.onerror = (error) => {
+
+    console.error(
+        "WebSocket Error",
+        error
+    );
+
+};
+
+</script>
+
+</body>
+</html>
