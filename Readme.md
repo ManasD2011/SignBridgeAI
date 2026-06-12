@@ -60,13 +60,13 @@ The platform captures live hand gestures through a camera feed, performs hand la
 
 ## System Architecture
 
-![System Architecture](docs/SignBridge_System_Architecture.png)
+![System Architecture](docs/SignBridge_Architecture.png)
 
 ---
 
 ## Sign Recognition Pipeline
 
-![Sign Recognition Pipeline](docs/SignBridge_Sign_Pipeline.png)
+![Sign Recognition Pipeline](docs/SignBridge_Pipeline.png)
 
 ---
 
